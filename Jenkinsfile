@@ -6,7 +6,8 @@ pipeline {
                 sh 'mvn --version'
                 sh 'mvn package'
                 sh 'ls'
-                sh 'echo "hello world"'
+                sh 'java -jar target/*.jar --server.port=8010'
+                sh 'curl http://localhost:8010/hello'
             }
         }
     }
